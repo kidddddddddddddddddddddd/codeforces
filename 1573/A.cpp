@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+#include <bits/extc++.h>
+
+using namespace std;
+using namespace __gnu_pbds;
+
+const int maxn = 2e5 + 7;
+const int mod = 998244353;
+const long long INF = 9223372036854775807;
+
+int T;
+int n;
+char s[maxn];
+
+int main() {
+#ifndef ONLINE_JUDGE
+    freopen("1.in", "r", stdin);
+    freopen("1.out", "w", stdout);
+#endif
+    scanf("%d", &T);
+    while (T--) {
+        scanf("%d", &n);
+        scanf("%s", s + 1);
+        int ans = 0;
+        for (int i = 1; i <= n; i++) {
+            if (s[i] != '0') {
+                ans += s[i] - '0';
+                if (i == n) {
+                } else {
+                    ans += 1;
+                }
+            }
+        }
+        printf("%d\n", ans);
+    }
+    return 0;
+}
+

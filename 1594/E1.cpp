@@ -10,7 +10,7 @@ const long long INF = 9223372036854775807;
 
 int k;
 
-long long poww(long long a, long long b) {
+long long poww(long long a, long long b, long long mod) {
     long long res = 1, base = a;
     while (b) {
         if (b & 1) {
@@ -28,8 +28,8 @@ int main() {
     //freopen("1.out", "w", stdout);
 #endif
     scanf("%d", &k);
-    long long total = (poww(2, k) - 1 + mod) % mod;
-    long long ans = 6 * poww(4, (total - 1 + mod) % mod) % mod;
+    long long total = poww(2, k, INF) - 2;
+    long long ans = 6ll * poww(4, total, mod) % mod;
     printf("%lld\n", ans);
     return 0;
 }
